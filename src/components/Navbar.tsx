@@ -193,7 +193,7 @@ export default function Navbar() {
           <ul className="flex flex-col items-start space-y-4 px-3">
             {menuItems.map((menuItem) => (
               <li key={menuItem.item} className="w-full border-b border-white last:border-none">
-                <Link href={menuItem.path} className="text-lg text-[#9b4819] flex items-center space-x-3 py-3" onClick={() => handleHashLinkClick(menuItem.path)}>
+                <Link href={menuItem.path} className="text-lg text-[#9b4819] flex items-center space-x-3 py-3" onClick={() => { handleHashLinkClick(menuItem.path); toggleMobileMenu(); }}>
                   <FontAwesomeIcon icon={menuItem.icon} />
                   <span>{menuItem.item}</span>
                 </Link>

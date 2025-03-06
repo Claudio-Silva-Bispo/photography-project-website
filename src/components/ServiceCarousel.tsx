@@ -17,7 +17,7 @@ const ServiceCarousel: React.FC = () => {
         <div className="text-gray-700 p-3 flex justify-center items-center rounded-md">
             <div className="container grid gap-6 mx-auto">
                 <div className="w-full px-3 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 md:text-center">
-                    <span className="text-5xl font-bold leading-none sm:text-6xl pt-10 text-[#9b4819] radley-regular-italic text-center">Serviços de Fotografia</span>
+                    <span className="text-5xl font-bold leading-none sm:text-6xl pt-10 text-[#9b4819] radley-regular-italic   md:text-center">Serviços de Fotografia</span>
                     <p className="mt-6 mb-8 text-2xl sm:mb-12 text-gray-600 carlito-regular md:text-center">
                         Nosso objetivo é capturar momentos inesquecíveis, oferecendo imagens de alta qualidade que ajudam a destacar produtos, eventos, ambientes e muito mais. Se você busca um olhar profissional e criativo para suas fotos, estamos aqui para ajudar.
                     </p>
@@ -27,7 +27,7 @@ const ServiceCarousel: React.FC = () => {
 
         <div className="relative w-full flex gap-2 py-6 overflow-x-auto custom-scrollbar">
           {services.map((service, index) => (
-            <div key={index} className="min-w-[35vh] sm:min-w-[60vh] h-200 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-gray-700">
+            <div key={index} className="min-w-full sm:min-w-[60vh] h-200 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-gray-700">
               <div className="flex justify-start mb-4">
                 <service.icon className="text-4xl text-[#9b4819]" />
               </div>

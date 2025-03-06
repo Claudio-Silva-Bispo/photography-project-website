@@ -36,13 +36,6 @@ export default function Contact(){
                                 <span className='text-[#f4f1e8] carlito-regular'>contact@business.com</span>
                             </p>
 
-                            <p className="flex items-center mb-3 text-gray-600 gap-3">
-                                <a href="https://www.instagram.com/cacaulovers" target="_blank" title="Instagram" className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-[#314027] hover:bg-gray-50 text-gray-50 hover:text-[#9b4819] focus:ring hover:ring focus:ring-opacity-75 focus:ring-[#9b4819] hover:ring-[#9b4819]">
-                                        <FaInstagram className="h-4 w-4 md:h-6 md:w-6" />
-                            </a>
-                            <span className='text-[#f4f1e8] carlito-regular'>@livehopephotography</span>
-                            </p>
-
                             <div className="flex flex-col justify-start lg:pt-5">
                                 <div className="flex space-x-4">
                                    {/* <a href="https://www.facebook.com/CacauShow" target="_blank" title="Facebook" className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-[#9b4819] hover:bg-gray-50 text-gray-50 hover:text-[#9b4819] focus:ring hover:ring focus:ring-opacity-75 focus:ring-[#9b4819] hover:ring-[#9b4819]">

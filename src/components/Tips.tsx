@@ -67,8 +67,8 @@ export default function CustomizedAccordions() {
   return (
     <section className='min-h-[60vh] flex flex-col justify-center md:p-20 m:pt-20 p-5'>
       
-      <div className="before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:bg-[#9b4819]pt-20 md:p-0 flex flex-col mb-6">
-        <h2 className="text-5xl text-[#9b4819] md:mb-0 font-bold">Principais serviços de fotografia</h2>
+      <div className="before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:bg-[#9b4819] pt-20 md:p-0 flex flex-col mb-6">
+        <h2 className="text-5xl text-[#9b4819] md:mb-0 font-bold w-full">Principais serviços de fotografia</h2>
       </div>
 
       <div className="space-y-4">

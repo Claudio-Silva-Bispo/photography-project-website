@@ -46,14 +46,14 @@ const AboutPage: React.FC = () => {
 
         <div className="flex-1">
           {/* Slider dentro do Header */}
-          <div className="w-[35vh] h-[60vh] md:w-[60vh] md:h-[60vh] overflow-hidden relative pt-10 md:pt-0">
+          <div className="w-full h-[60vh] md:w-[60vh] md:h-[60vh] overflow-hidden relative pt-10 md:pt-0">
             <div className="relative w-full h-full">
               {/* Imagem 1 */}
               <Image
                 src={images[0]}
                 alt="Gallery"
                 layout="fill"
-                objectFit="cover"
+                objectFit="fill"
                 className="rounded-lg"
               />
               {/* A linha que vai cortar a imagem */}
@@ -72,7 +72,7 @@ const AboutPage: React.FC = () => {
                   src={images[1]}
                   alt="Gallery"
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="fill"
                   className="rounded-lg"
                 />
               </div>

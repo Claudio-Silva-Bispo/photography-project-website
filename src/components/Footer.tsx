@@ -21,6 +21,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center">
+          
           <div className="text-sm mb-5 sm:mb-0 text-gray-400">
             © Copyright 2024. Todos os direitos reservados.
           </div>
