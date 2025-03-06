@@ -1,8 +1,8 @@
 export default function Hero() {
     return (
-        <section className="relative flex flex-col items-center justify-center h-screen bg-[#f4f1e8] text-center px-6">
+        <section className="relative flex flex-col items-center md:justify-center h-screen bg-[#f4f1e8] text-center px-6">
             {/* Logo no topo como imagem */}
-            <div className="top-10">
+            <div className="top-10 hidden sm:flex">
                 <img src="/assets/Logo/logo.png" alt="Logo" className="w-20 h-20" />
             </div>
             
@@ -13,13 +13,13 @@ export default function Hero() {
             </h1>
             
             {/* Descrição */}
-            <p className="mt-6 text-4xl text-gray-700 max-w-4xl carlito-regular-italic">
+            <p className="mt-6 text-3xl md:text-4xl text-gray-700 max-w-4xl carlito-regular-italic">
                 Momentos eternos, capturados com elegância e simplicidade. Iluminamos histórias com um olhar minimalista, onde cada detalhe expressa emoção e autenticidade.
             </p>
             
             {/* Botão de ação com linhas animadas */}
             <a 
-                href="/ContactSection" 
+                href="#contact" 
                 className="mt-6 text-[#9b4819] italic text-lg hover:underline relative"
             >
                 Hire me
