@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border {
+  margin: 0;
+  padding: 0; 
+}
+
+.radley-regular {
+  font-family: "Radley", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.radley-regular-italic {
+  font-family: "Radley", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.carlito-regular {
+  font-family: "Carlito", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.carlito-bold {
+  font-family: "Carlito", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.carlito-regular-italic {
+  font-family: "Carlito", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.carlito-bold-italic {
+  font-family: "Carlito", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/*
+Cores
+
+Verde - [#314027]
+Creme - [#f4f1e8]
+Marrom - [#9b4819]
+Bege - [#bd8f53]
+
+  
+  
+*/
+
+
+body {
+    font-family: 'Radley', sans-serif;
+  }
+  
+  h1 {
+    font-weight: 700;
+  }
+  
+  p {
+    font-weight: 400;
+  }
+
+  button{
+    font-weight: 700;
+  }
+
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    display: flex;
+    gap: 1rem;
+    animation: marquee 30s linear infinite;
+    width: calc(17 * (48px + 1rem));
+  }
+
+
+/* Estilo da barra de rolagem */
+.scrollbar-custom {
+  scrollbar-width: thin; /* Para Firefox */
+  scrollbar-color: #aad4f5 #f5f5f5; /* Cor do "thumb" e da barra no Firefox */
+}
+
+/* Para navegadores baseados no WebKit (Chrome, Safari, Edge) */
+.scrollbar-custom::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+  height: 12px; /* Altura da barra de rolagem horizontal */
+}
+
+/* Fundo da barra de rolagem */
+.scrollbar-custom::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Fundo da barra */
+}
+
+/* Parte que se move na barra de rolagem */
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #aad4f5; /* Cor azul delicado para o thumb */
+  border-radius: 10px; /* Bordas arredondadas para um visual mais suave */
+}
+
+/* Cor ao passar o mouse por cima */
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background-color: #8cbfe3; /* Cor mais escura ao hover */
+}
