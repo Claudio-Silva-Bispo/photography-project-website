@@ -18,14 +18,12 @@ export default function Navbar() {
 
   const menuItems = [
     { item: 'Home', path: '/', icon: faHome },
-    { item: 'Sobre nós', path: '/AboutCompany', icon: faBuilding },
-    { item: 'Contatos', path: '/ContactSection', icon: faPhone },
+    { item: 'Sobre nós', path: '#about', icon: faBuilding },
+    { item: 'Contato', path: '#contact', icon: faPhone },
     { item: 'Orçamento', path: '#quote', icon: faCalendarAlt },
-    { item: 'Serviços', path: '/Services', icon: faCalendarTimes },
-    { item: 'Feedback', path: '/Feedback', icon: faComments },
-    { item: 'Testimonials', path: '/Testimonials', icon: faThumbsUp },
-    { item: 'Dicas', path: '/Tips', icon: faShareAlt },
-    { item: 'Time', path: '/Team', icon: faUsers },
+    { item: 'Serviços', path: '#services', icon: faCalendarTimes },
+    { item: 'Testimonials', path: '#receber-feedback', icon: faThumbsUp },
+    { item: 'Dicas', path: '#tips', icon: faShareAlt },
     { item: 'Galeria', path: '/Gallery', icon: faGlobe },
   ];
 
@@ -132,7 +130,7 @@ export default function Navbar() {
   return (
     <header className={`p-4 fixed top-0 w-full z-50 text-gray-700'}`} >
       <div className="container flex justify-between h-10 mx-auto w-full">
-        <div className="hidden md:flex md:h-10 md:w-40  ">
+        <div className="hidden md:flex md:h-10 md:w-40">
           <a href="/"><Image width={40} height={40} src={"/assets/Logo/logo.png"} alt="Logo da empresa" /></a>
         </div>
         <div className="hidden lg:flex items-center space-x-3 text-lg">
@@ -179,8 +177,8 @@ export default function Navbar() {
 
       {/* Menu mobile */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-gray-800 z-40 flex flex-col lg:hidden">
-          <button onClick={toggleMobileMenu} className="self-end text-gray-800 pt-5">
+        <div className="fixed inset-0 bg-[#f4f1e8] z-40 flex flex-col lg:hidden text-[#9b4819]">
+          <button onClick={toggleMobileMenu} className="self-end text-[#9b4819] pt-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -188,14 +186,14 @@ export default function Navbar() {
               stroke="currentColor"
               className="w-6 h-6"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" className='text-white'/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" className='text-[#9b4819]'/>
             </svg>
           </button>
 
           <ul className="flex flex-col items-start space-y-4 px-3">
             {menuItems.map((menuItem) => (
               <li key={menuItem.item} className="w-full border-b border-white last:border-none">
-                <Link href={menuItem.path} className="text-md text-white flex items-center space-x-3 py-3" onClick={() => handleHashLinkClick(menuItem.path)}>
+                <Link href={menuItem.path} className="text-lg text-[#9b4819] flex items-center space-x-3 py-3" onClick={() => { handleHashLinkClick(menuItem.path); toggleMobileMenu(); }}>
                   <FontAwesomeIcon icon={menuItem.icon} />
                   <span>{menuItem.item}</span>
                 </Link>

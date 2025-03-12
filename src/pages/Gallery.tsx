@@ -41,42 +41,30 @@ export default function Gallery() {
   return (
     <div>
       {/* Seção do nome e setas de navegação */}
-      <section className="py-6 bg-[#111827] pt-32">
+      <section className="py-6 bg-[#f4f1e8] pt-10">
         <div className="container mx-auto text-center mb-8">
-          <div className="flex justify-center items-center">
-            <button
-              onClick={handlePrevClick}
-              className="p-2 bg-white text-black rounded-l-full mr-4"
-            >
-              Anterior
-            </button>
-            <h2 className="text-white text-3xl font-bold">{name}</h2>
-            <button
-              onClick={handleNextClick}
-              className="p-2 bg-white text-black rounded-r-full ml-4"
-            >
-              Próximo
-            </button>
-          </div>
           
         </div>
+          <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+            <Image width={800} height={800} src="/assets/Service/cozinheira.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
+            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Service/baby.jpg" />
+            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Service/cozinheira.jpg" />
 
-        {/* Seção da galeria de imagens */}
-        
-        <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-          <Image width={800} height={400} src="/assets/Carrosel/cozinha/20210201_131604.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
-          <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/cozinha/20210122_172648.jpg" />
-          <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/cozinha/IMG-20200204-WA0029.jpg" />
-          <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/sala/IMG-20200204-WA0022.jpg" />
-          <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/sala/20201217_095105.jpg" />
-          <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/quarto/20201125_151146.jpg" />
-          <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/quarto/20201202_120913.jpg" />
-          <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/banheiro/20201125_105927.jpg" />
-          <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/banheiro/20201125_151802.jpg" />
-          <Image width={800} height={400} src="/assets/Carrosel/personalizado/20201217_123521.jpg" alt="" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 bg-gray-500 aspect-square" />
-        </div>
-        
+            <Image width={800} height={800} src="/assets/Service/sofa.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
+            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/sala/IMG-20200204-WA0022.jpg" />
+            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/sala/20201217_095105.jpg" />
 
+            <Image width={800} height={800} src="/assets/Service/camera.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
+            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Service/imagem1.jpeg" />
+            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/About/pessoal.jpg" />
+
+            <Image width={800} height={800} src="/assets/Service/sofa.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
+            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/banheiro/20201125_105927.jpg" />
+            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/banheiro/20201125_151802.jpg" />
+
+            <Image width={800} height={400} src="/assets/Service/janela.jpg" alt="" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 bg-gray-500 aspect-square" />
+          </div>
+        
         {/* Botões de navegação na parte inferior */}
         <div className="flex justify-center mt-6">
           <button

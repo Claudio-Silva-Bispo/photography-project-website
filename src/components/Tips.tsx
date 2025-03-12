@@ -65,17 +65,17 @@ export default function CustomizedAccordions() {
     };
 
   return (
-    <section className='min-h-[60vh] flex flex-col justify-center md:p-20 m:pt-20'>
+    <section className='min-h-[60vh] flex flex-col justify-center md:p-20 m:pt-20 p-5' id='tips'>
       
-      <div className="before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:bg-[#9b4819]pt-20 md:p-0 flex flex-col mb-6">
-        <h2 className="text-5xl text-[#9b4819] md:mb-0 font-bold">Principais serviços de fotografia</h2>
+      <div className="before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:bg-[#9b4819] pt-20 md:p-0 flex flex-col mb-6">
+        <h2 className="text-5xl text-[#9b4819] md:mb-0 font-bold w-full">Principais serviços de fotografia</h2>
       </div>
 
       <div className="space-y-4">
         <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <CameraAltIcon className='mr-3'/>
-            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Fotografia de Casamento</Typography>
+            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Casamentos</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className='flex flex-col gap-3 text-gray-600 text-sm m:text-xl'>
@@ -87,7 +87,7 @@ export default function CustomizedAccordions() {
         <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
           <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
             <CameraEnhanceIcon className='mr-3'/>
-            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Fotografia de Eventos</Typography>
+            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Eventos</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className='flex flex-col gap-3 text-gray-600 text-sm m:text-xl'>
@@ -111,7 +111,7 @@ export default function CustomizedAccordions() {
         <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
           <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
             <ImageIcon className='mr-3'/>
-            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Fotografia de Produtos</Typography>
+            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Produtos</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className='flex flex-col gap-3 text-gray-600 text-sm m:text-xl'>
@@ -123,7 +123,7 @@ export default function CustomizedAccordions() {
         <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
           <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
             <PhotoSizeSelectActualIcon className='mr-3'/>
-            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Fotografia Arquitetônica</Typography>
+            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Natureza</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className='flex flex-col gap-3 text-gray-600 text-sm m:text-xl'>

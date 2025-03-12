@@ -1,69 +1,76 @@
-import React from 'react';
-import { FaCamera, FaPhotoVideo, FaImage, FaRegImages, FaInstagram, FaGlobe, FaAdjust, FaArrowRight } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaCamera, FaPhotoVideo, FaImage, FaArrowRight, FaHeart } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css'; // Importação do estilo do Swiper
+import 'swiper/swiper-bundle.css';
 
 const ServiceCarousel: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   const services = [
-    { title: 'Fotografia de Eventos', description: 'Capturamos os melhores momentos do seu evento, garantindo recordações inesquecíveis.', icon: FaCamera, details: 'Saiba mais', images: ['/assets/Service/imagem1.jpeg', '/assets/Service/imagem2.jpg', '/assets/Service/image3.jpg'] },
-    { title: 'Fotografia de Produtos', description: 'Fotografia especializada para mostrar seu produto da melhor forma possível.', icon: FaImage, details: 'Saiba mais', images: ['/assets/Service/imagem1.jpg', '/assets/Service/image5.jpg', '/assets/Service/image6.jpg'] },
-    { title: 'Ensaios Fotográficos', description: 'Realizamos ensaios fotográficos personalizados para qualquer ocasião.', icon: FaPhotoVideo, details: 'Saiba mais', images: ['/assets/Service/imagem2.jpg', '/assets/Service/imagem3.jpg', '/assets/Service/imagem4.jpg'] },
-    // ... outros serviços
+    { title: 'Fotografia Pessoal', description: 'Capturamos os melhores momentos da sua vida com cuidado e carinho.', icon: FaCamera, details: 'Saiba mais', images: ['/assets/Service/imagem1.jpeg', '/assets/Service/imagem2.jpg'] },
+    { title: 'Fotografia Profissionais', description: 'Fotografia especializada para empresas.', icon: FaImage, details: 'Saiba mais', images: ['/assets/Service/camera.jpg', '/assets/Service/camera.jpg'] },
+    { title: 'Ensaios Fotográficos', description: 'Ensaios personalizados para qualquer ocasião.', icon: FaPhotoVideo, details: 'Saiba mais', images: ['/assets/Service/cozinheira.jpg', '/assets/Service/cozinheira.jpg'] },
+    { title: 'Ensaios Familiares', description: 'Ensaios personalizados com sua família para eventos especiais como natal, comemorações, eventos que são importates para você.', icon: FaHeart, details: 'Saiba mais', images: ['/assets/Service/baby.jpg', '/assets/Service/baby.jpg'] },
+    { title: 'Ensaios Personalizados', description: 'Ensaios do seu jeito e com ambientes que combinam com você.', icon: FaPhotoVideo, details: 'Saiba mais', images: ['/assets/Service/sofa.jpg', '/assets/Service/sofa.jpg'] },
+    { title: 'Redes Sociais', description: 'Monte uma galeria diferenciada para suas Redes Sociais.', icon: FaPhotoVideo, details: 'Saiba mais', images: ['/assets/Service/janela.jpg', '/assets/Service/janela.jpg'] },
+    { title: 'Gestantes', description: 'Salve seus momentos enquanto seu baby ainda te espera e está na melhor etapa da sua vida.', icon: FaPhotoVideo, details: 'Saiba mais', images: ['/assets/Service/baby.jpg', '/assets/Service/janela.jpg']},
   ];
 
   return (
-    <section className='scrollbar-none p-3 bg-[#f4f1e8]'>
-
-        <div className="text-gray-700 p-3 flex justify-center items-center rounded-md">
-            <div className="container grid gap-6 mx-auto">
-                <div className="w-full px-3 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 text-center">
-                    <span className="text-5xl font-bold leading-none sm:text-6xl pt-10 text-[#9b4819] radley-regular-italic text-center">Serviços de Fotografia</span>
-                    <p className="mt-6 mb-8 text-2xl sm:mb-12 text-gray-600 carlito-regular text-center">
-                        Nosso objetivo é capturar momentos inesquecíveis, oferecendo imagens de alta qualidade que ajudam a destacar produtos, eventos, ambientes e muito mais. Se você busca um olhar profissional e criativo para suas fotos, estamos aqui para ajudar.
-                    </p>
-                </div>
-            </div>
+    <section className='scrollbar-none p-2 md:p-5 bg-[#f4f1e8] pb-10 md:pb-0' id='services'>
+      <div className="text-gray-700 flex justify-center items-center rounded-md">
+        <div className="container text-start p-6">
+          <h2 className="text-4xl font-bold text-[#9b4819]">Serviços de Fotografia</h2>
+          <p className="mt-4 text-2xl text-gray-600">Capturamos momentos inesquecíveis com alta qualidade.</p>
         </div>
+      </div>
 
-        <div className="relative w-full flex gap-2 py-6 overflow-x-auto custom-scrollbar">
+      {isMobile ? (
+        <div className="flex flex-col gap-6 items-center">
           {services.map((service, index) => (
-            <div key={index} className="min-w-[40vh] sm:min-w-[60vh] h-200 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-gray-700">
+            <div key={index} className="w-11/12 bg-white p-6 rounded-lg shadow-lg text-gray-700">
+              <div className="flex justify-start mb-4">
+                <service.icon className="text-4xl text-[#9b4819]" />
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-3">{service.title}</h3>
+              <img src={service.images[0]} alt={service.title} className="w-full h-[400px] object-cover rounded-md mb-3" />
+              <p className="text-gray-600 text-center mb-3">{service.description}</p>
+              <a href="/Gallery" className="text-[#9b4819] block text-center mt-3">{service.details}</a>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="relative w-full flex gap-4 py-6 overflow-x-auto custom-scrollbar">
+          {services.map((service, index) => (
+            <div key={index} className="min-w-[350px] bg-white p-3 rounded-lg shadow-lg text-gray-700">
               <div className="flex justify-start mb-4">
                 <service.icon className="text-4xl text-[#9b4819]" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-center">{service.title}</h3>
               <p className="text-gray-600 mb-5 text-center">{service.description}</p>
-              {/* Carrossel de imagens */}
-              <Swiper
-                spaceBetween={10}
-                slidesPerView={1}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
-                loop
-                className="mb-4"
-              >
+              <Swiper spaceBetween={10} slidesPerView={1} autoplay={{ delay: 3000 }} loop className="mb-4">
                 {service.images.map((image, idx) => (
                   <SwiperSlide key={idx}>
-                    <img 
-                      src={image} 
-                      alt={`Imagem ${idx + 1} do serviço`} 
-                      className="w-full h-[200px] object-contains rounded-md" // Limitando a altura da imagem e mantendo a proporção
-                    />
+                    <img src={image} alt={`Imagem ${idx + 1}`} className="w-full h-[400px] object-cover rounded-md" />
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <a href="/Service" className="text-[#9b4819] text-center block">{service.details}</a>
+              <a href="/Gallery" className="text-[#9b4819] text-center block">{service.details}</a>
             </div>
           ))}
         </div>
-
-        <div className="flex justify-end mb-3 pt-3 m-3">
-          <button className="p-2 bg-[#9b4819] rounded-full hover:bg-gray-300 text-white">
-            <FaArrowRight />
-          </button>
-        </div>
+      )}
     </section>
   );
 };
 
 export default ServiceCarousel;
-

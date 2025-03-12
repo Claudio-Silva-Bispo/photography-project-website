@@ -54,6 +54,7 @@ Cores
 Verde - [#314027]
 Creme - [#f4f1e8]
 Marrom - [#9b4819]
+Marrom amber - #b45309
 Bege - [#bd8f53]
 
   
@@ -121,4 +122,17 @@ body {
 /* Cor ao passar o mouse por cima */
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
   background-color: #8cbfe3; /* Cor mais escura ao hover */
+}
+
+@keyframes moveAnts {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -8px;
+  }
+}
+
+.animate-ants-vertical {
+  animation: moveAnts 1s linear infinite;
 }
