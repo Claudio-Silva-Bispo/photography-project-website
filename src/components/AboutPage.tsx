@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
-const images = ["/assets/Service/imagem1.jpeg", "/assets/Service/imagem2.jpeg"];
+const images = ["/assets/Service/antes-depois/antes.jpg", "/assets/Service/antes-depois/depois.jpg"];
 
 const AboutPage: React.FC = () => {
   const [linePosition, setLinePosition] = useState(0);

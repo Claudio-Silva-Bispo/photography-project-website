@@ -75,11 +75,11 @@ export default function CustomizedAccordions() {
         <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <CameraAltIcon className='mr-3'/>
-            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Casamentos</Typography>
+            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Crianças</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className='flex flex-col gap-3 text-gray-600 text-sm m:text-xl'>
-              Capturamos os momentos mais especiais do seu grande dia, com fotos emocionantes que você poderá guardar para sempre. Nosso serviço inclui ensaio pré-casamento, cerimônia e recepção, tudo feito com profissionalismo e criatividade.
+              Capturamos os momentos mais especiais do seu grande dia, com fotos emocionantes que você poderá guardar para sempre.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -124,6 +124,30 @@ export default function CustomizedAccordions() {
           <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
             <PhotoSizeSelectActualIcon className='mr-3'/>
             <Typography className='font-bold text-md sm:text-xl text-gray-700'>Natureza</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography className='flex flex-col gap-3 text-gray-600 text-sm m:text-xl'>
+              Capturamos a beleza e a funcionalidade de espaços internos e externos, criando imagens que mostram cada detalhe arquitetônico com clareza e estilo. Ideal para designers, arquitetos e imobiliárias.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+          <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
+            <PhotoSizeSelectActualIcon className='mr-3'/>
+            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Família</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography className='flex flex-col gap-3 text-gray-600 text-sm m:text-xl'>
+              Capturamos a beleza e a funcionalidade de espaços internos e externos, criando imagens que mostram cada detalhe arquitetônico com clareza e estilo. Ideal para designers, arquitetos e imobiliárias.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+          <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
+            <PhotoSizeSelectActualIcon className='mr-3'/>
+            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Gestante</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className='flex flex-col gap-3 text-gray-600 text-sm m:text-xl'>

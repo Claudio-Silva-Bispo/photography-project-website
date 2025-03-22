@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faBuilding, faPhone, faCalendarAlt, faCalendarTimes, faComments, faChevronDown, faUsers, faThumbsUp, faShareAlt, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faHome, faBuilding, faPhone, faCalendarAlt, faCalendarTimes, faComments, faChevronDown, faUsers, faThumbsUp, faShareAlt, faEnvelope, faGlobe, faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 // Instalar npm install primeicons
 // Desinstalar npm uninstall primeicons
@@ -21,6 +21,7 @@ export default function Navbar() {
     { item: 'Sobre nós', path: '#about', icon: faBuilding },
     { item: 'Contato', path: '#contact', icon: faPhone },
     { item: 'Orçamento', path: '#quote', icon: faCalendarAlt },
+    { item: 'Tabela preço', path: '#price-table', icon: faMoneyCheckDollar },
     { item: 'Serviços', path: '#services', icon: faCalendarTimes },
     { item: 'Testimonials', path: '#receber-feedback', icon: faThumbsUp },
     { item: 'Dicas', path: '#tips', icon: faShareAlt },
