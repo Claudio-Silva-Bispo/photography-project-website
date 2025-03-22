@@ -19,6 +19,5 @@ Exibição de opiniões de clientes sobre os serviços prestados, garantindo tra
 ***Exposição de Serviços:*** 
 Detalhamento dos serviços de fotografia oferecidos, com informações sobre cada um e a possibilidade de interação através de botões de ação.
 
-Esse projeto visa, assim, não apenas apresentar os serviços de fotografia de forma atraente, mas também otimizar o processo de contratação e feedback, contribuindo para o crescimento e visibilidade da empresa de fotografia.
-
+Esse projeto visa, assim, não apenas apresentar os serviços de fotografia de forma atraente, mas também otimizar o processo de contratação e feedback, contribuindo para o crescimento e visibilidade da empresa de fotografia..
 
