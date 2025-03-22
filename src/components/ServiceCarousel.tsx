@@ -17,12 +17,12 @@ const ServiceCarousel: React.FC = () => {
 
   const services = [
     { title: 'Fotografia Pessoal', description: 'Capturamos os melhores momentos da sua vida com cuidado e carinho.', icon: FaCamera, details: 'Saiba mais', images: ['/assets/Service/imagem1.jpeg'] },
-    { title: 'Fotografias Profissionais', description: 'Fotografia especializada para empresas.', icon: FaImage, details: 'Saiba mais', images: ['/assets/Service/camera.jpg'] },
-    { title: 'Ensaios Fotográficos', description: 'Ensaios personalizados para qualquer ocasião.', icon: FaPhotoVideo, details: 'Saiba mais', images: ['/assets/Service/cozinheira.jpg'] },
+    { title: 'Fotografias Profissionais', description: 'Fotografia especializada para empresas.', icon: FaImage, details: 'Saiba mais', images: ['/assets/Service/profissional/camera-carrousel.png'] },
+    { title: 'Ensaios Fotográficos', description: 'Ensaios personalizados para qualquer ocasião.', icon: FaPhotoVideo, details: 'Saiba mais', images: ['/assets/Service/cozinheira-baby.png'] },
     { title: 'Ensaios Familiares', description: 'Ensaios personalizados com sua família para eventos especiais como natal, comemorações, eventos que são importates para você.', icon: FaHeart, details: 'Saiba mais', images: ['/assets/Service/familia/familia-natureza.jpg'] },
-    { title: 'Ensaios Personalizados', description: 'Ensaios do seu jeito e com ambientes que combinam com você.', icon: FaCameraRetro, details: 'Saiba mais', images: ['/assets/Service/sofa.jpg'] },
-    { title: 'Redes Sociais', description: 'Monte uma galeria diferenciada para suas Redes Sociais.', icon: FaLaptopMedical, details: 'Saiba mais', images: ['/assets/Service/janela.jpg'] },
-    { title: 'Gestantes', description: 'Salve seus momentos enquanto seu baby ainda te espera e está na melhor etapa da sua vida.', icon: FaBaby, details: 'Saiba mais', images: ['/assets/Service/baby.jpg']},
+    { title: 'Ensaios Personalizados', description: 'Ensaios do seu jeito e com ambientes que combinam com você.', icon: FaCameraRetro, details: 'Saiba mais', images: ['/assets/Service/sofa-mulher.png'] },
+    { title: 'Redes Sociais', description: 'Monte uma galeria diferenciada para suas Redes Sociais.', icon: FaLaptopMedical, details: 'Saiba mais', images: ['/assets/Service/social-media/janela-media-social.png'] },
+    { title: 'Gestantes', description: 'Salve seus momentos enquanto seu baby ainda te espera e está na melhor etapa da sua vida.', icon: FaBaby, details: 'Saiba mais', images: ['/assets/Service/baby-gestantes']},
     { title: 'Publicidade', description: 'Divulgue seus produtos e serviços.', icon: FaBaby, details: 'Saiba mais', images: ['/assets/Service/social-media/publicidade.jpg']},
   ];
 
