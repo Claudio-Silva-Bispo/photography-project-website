@@ -12,7 +12,7 @@ export default function About() {
                 </div>
                 <div className="relative w-full xl:col-span-2">
                     <Image 
-                        src="/assets/About/pessoal.jpg" 
+                        src="/assets/About/any-about.png" 
                         alt="Limpeza Profissional" 
                         className="object-cover w-full h-auto max-w-full md:w-3/4 md:h-[500px] rounded-t-full xl:rounded-b-none bg-gray-500" 
                         width={800} 
