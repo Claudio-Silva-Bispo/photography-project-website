@@ -3,9 +3,6 @@ import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faBuilding, faPhone, faCalendarAlt, faCalendarTimes, faComments, faChevronDown, faUsers, faThumbsUp, faShareAlt, faEnvelope, faGlobe, faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
-// Instalar npm install primeicons
-// Desinstalar npm uninstall primeicons
-//import 'primeicons/primeicons.css';
 import Link from 'next/link';
 
 export default function Navbar() {
@@ -16,96 +13,141 @@ export default function Navbar() {
   const [activeHash, setActiveHash] = useState('');
   const router = useRouter();
 
-  const menuItems = [
-    { item: 'Home', path: '/', icon: faHome },
-    { item: 'Sobre nós', path: '#about', icon: faBuilding },
-    { item: 'Contato', path: '#contact', icon: faPhone },
-    { item: 'Orçamento', path: '#quote', icon: faCalendarAlt },
-    { item: 'Tabela preço', path: '#price-table', icon: faMoneyCheckDollar },
-    { item: 'Serviços', path: '#services', icon: faCalendarTimes },
-    { item: 'Testimonials', path: '#receber-feedback', icon: faThumbsUp },
-    { item: 'Dicas', path: '#tips', icon: faShareAlt },
-    { item: 'Galeria', path: '/Gallery', icon: faGlobe },
+  const menuItems: Array<{ item: string, path: string, icon: any, type: 'page' | 'section' }> = [
+    { item: 'Home', path: '/', icon: faHome, type: 'page' },
+    { item: 'Sobre nós', path: '#about', icon: faBuilding, type: 'section' },
+    { item: 'Contato', path: '#contact', icon: faPhone, type: 'section' },
+    { item: 'Orçamento', path: '#quote', icon: faCalendarAlt, type: 'section' },
+    { item: 'Tabela preço', path: '#price-table', icon: faMoneyCheckDollar, type: 'section' },
+    { item: 'Serviços', path: '#services', icon: faCalendarTimes, type: 'section' },
+    { item: 'Testimonials', path: '#receber-feedback', icon: faThumbsUp, type: 'section' },
+    { item: 'Dicas', path: '#tips', icon: faShareAlt, type: 'section' },
+    { item: 'Galeria', path: '/Gallery', icon: faGlobe, type: 'page' },
   ];
 
-  const sections = [
-
+  const sections: Array<{
+    title: string;
+    icon: any;
+    description: string;
+    path: string;
+    type: 'page' | 'section';
+  }> = [
     {
       title: 'Sobre nós',
       icon: faBuilding,
       description: 'Aprenda mais sobre nós',
-      path: '/AboutCompany',
+      path: '#AboutCompany',
+      type: 'section'
     },
     {
       title: 'Contato',
       icon: faPhone,
       description: 'Get in touch with us',
-      path: '/ContactSection',
+      path: '#ContactSection',
+      type: 'section'
     },
     {
       title: 'Testimonials',
       icon: faThumbsUp,
       description: 'O que nossos clientes andam falando',
-      path: '/Testimonials',
+      path: '#Testimonials',
+      type: 'section'
     },
     {
-      title: 'Eventos',
-      icon: faCalendarTimes,
-      description: 'Serviços exclusivos para aniversários',
-      path: '/Services',
-    },
-    
-    {
-      title: 'Natureza',
-      icon: faComments,
-      description: 'Imagine as imagens na natureza',
-      path: '/Feedback',
-    },
-    
-    {
-      title: 'Crianças',
-      icon: faShareAlt,
-      description: 'Sessão exclusiva para criaças',
-      path: '/Tips',
-    },
-    {
-      title: 'Adultos',
+      title: 'Preço',
       icon: faUsers,
-      description: 'Sessão exclusiva para adultos',
-      path: '/Team',
+      description: 'Sessão exclusiva com os preços bases',
+      path: '#PriceTable',
+      type: 'section'
     },
-    
     {
-      title: 'Casamentos',
+      title: 'Serviços',
       icon: faEnvelope,
-      description: 'Sessão exclusiva para casamentos',
-      path: '/NewsLetter',
+      description: 'serviços disponiveis',
+      path: '#Services',
+      type: 'section'
     },
     {
       title: 'Galeria Personalizada',
       icon: faGlobe,
       description: 'Fotos dos principais serviços',
       path: '/Gallery',
+      type: 'page'
     },
   ];
 
-  // Rotas 
+  // Função aprimorada para navegação
+  const handleNavigation = async (path: string, type: 'page' | 'section' = 'section') => {
+    setIsMobileMenuOpen(false);
+    setIsDropdownOpen(false);
 
-  const handleHashLinkClick = (hash: string) => {
-    if (hash.startsWith('#')) {
-      if (router.pathname === '/') {
-        // Se estiver na home, rolar para a seção
-        document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        // Caso contrário, navega para a home e rola para a seção
-        router.push(`/`).then(() => {
-          document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
-        });
+    if (type === 'page') {
+      // Navegação para páginas
+      await router.push(path);
+    } else if (type === 'section') {
+      // Navegação para seções
+      if (path.startsWith('#')) {
+        const sectionId = path.substring(1);
+        
+        if (router.pathname === '/') {
+          // Se já estiver na home, rola diretamente para a seção
+          scrollToSection(sectionId);
+        } else {
+          // Se não estiver na home, navega para a home primeiro
+          await router.push('/');
+          // Aguarda um pequeno delay para garantir que a página carregou
+          setTimeout(() => {
+            scrollToSection(sectionId);
+          }, 100);
+        }
       }
-    } else {
-      router.push(hash);
     }
   };
+
+  // Função para rolar até uma seção específica
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId) || document.querySelector(`[data-section="${sectionId}"]`);
+    
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Atualiza o hash da URL sem recarregar a página
+      if (typeof window !== 'undefined') {
+        window.history.replaceState(null, '', `#${sectionId}`);
+        setActiveHash(`#${sectionId}`);
+      }
+    } else {
+      console.warn(`Seção com ID "${sectionId}" não encontrada`);
+    }
+  };
+
+  // Hook para detectar mudanças no hash da URL
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      setActiveHash(hash);
+      
+      if (hash && router.pathname === '/') {
+        const sectionId = hash.substring(1);
+        setTimeout(() => scrollToSection(sectionId), 100);
+      }
+    };
+
+    // Detecta mudanças no hash
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Verifica o hash inicial
+    if (typeof window !== 'undefined' && window.location.hash) {
+      handleHashChange();
+    }
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [router.pathname]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -128,82 +170,176 @@ export default function Navbar() {
     };
   }, []);
 
+  // Fechar menu mobile ao redimensionar para desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobileMenuOpen]);
+
   return (
-    <header className={`p-4 fixed top-0 w-full z-50 text-gray-700'}`} >
-      <div className="container flex justify-between h-10 mx-auto w-full">
-        <div className="hidden md:flex md:h-10 md:w-40">
-          <a href="/"><Image width={40} height={40} src={"/assets/Logo/logo.png"} alt="Logo da empresa" /></a>
-        </div>
-        <div className="hidden lg:flex items-center space-x-3 text-lg">
-          <Link href="/" className="px-4 py-2 hover:bg-[#9b4819] hover:text-white rounded-md flex items-center space-x-2">
-            <FontAwesomeIcon icon={faHome} />
-            <span>Home</span>
-          </Link>
-          <Link href="#quote" className="px-4 py-2 hover:bg-[#9b4819] hover:text-white rounded-md flex items-center space-x-2" onClick={() => handleHashLinkClick('#FormQuote')}>
-            <FontAwesomeIcon icon={faCalendarAlt} />
-            <span>Orçamento</span>
-          </Link>
-          <div className="relative" ref={dropdownRef}>
-            <button onClick={handleDropdownToggle} className="px-4 py-2 hover:bg-[#9b4819] hover:text-white rounded-md flex items-center space-x-2">
-              <span>Seções</span>
-              <FontAwesomeIcon icon={faChevronDown} />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+      {/* Container principal respeitando o limite de 1280px */}
+      <div className="max-w-screen-xl mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          
+          {/* Logo - visível apenas em desktop */}
+          <div className="hidden md:flex items-center">
+            <button onClick={() => handleNavigation('/', 'page')} className="flex items-center">
+              <Image 
+                width={40} 
+                height={40} 
+                src="/assets/Logo/logo.png" 
+                alt="Logo da empresa"
+                className="w-10 h-10 object-contain"
+              />
             </button>
-            {isDropdownOpen && (
-              <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-[80vw] bg-white shadow-lg rounded-md z-50">
-                <div className="grid grid-cols-3 gap-4 p-4">
-                  {sections.map((section) => (
-                    <Link key={section.title} href={section.path} className="flex items-start space-x-3 p-2 hover:bg-gray-100 rounded-md" onClick={() => handleHashLinkClick(section.path)}>
-                      <div className="bg-gray-200 p-2 rounded-md w-10 h-10 flex items-center justify-center">
-                        <FontAwesomeIcon icon={section.icon} className="text-gray-700" />
-                      </div>
-                      <div>
-                        <div className="font-semibold">{section.title}</div>
-                        <div className="text-sm text-gray-600">{section.description}</div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
           
+          {/* Menu Desktop - oculto em mobile */}
+          <nav className="hidden lg:flex items-center space-x-1">
+            <button 
+              onClick={() => handleNavigation('/', 'page')} 
+              className={`px-3 py-2 text-sm hover:bg-[#9b4819] hover:text-white rounded-md flex items-center space-x-2 transition-colors ${router.pathname === '/' ? 'bg-[#9b4819] text-white' : 'text-gray-700'}`}
+            >
+              <FontAwesomeIcon icon={faHome} className="w-4 h-4" />
+              <span>Home</span>
+            </button>
+            
+            <button 
+              onClick={() => handleNavigation('#FormQuote', 'section')} 
+              className={`px-3 py-2 text-sm hover:bg-[#9b4819] hover:text-white rounded-md flex items-center space-x-2 transition-colors ${activeHash === '#FormQuote' ? 'bg-[#9b4819] text-white' : 'text-gray-700'}`}
+            >
+              <FontAwesomeIcon icon={faCalendarAlt} className="w-4 h-4" />
+              <span>Orçamento</span>
+            </button>
+            
+            {/* Dropdown Seções */}
+            <div className="relative" ref={dropdownRef}>
+              <button 
+                onClick={handleDropdownToggle} 
+                className="px-3 py-2 text-sm hover:bg-[#9b4819] hover:text-white rounded-md flex items-center space-x-2 transition-colors text-gray-700"
+              >
+                <span>Seções</span>
+                <FontAwesomeIcon 
+                  icon={faChevronDown} 
+                  className={`w-3 h-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
+                />
+              </button>
+              
+              {isDropdownOpen && (
+                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-[70vw] max-w-4xl bg-white shadow-xl rounded-lg z-50 border border-gray-200">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-4">
+                    {sections.map((section) => (
+                      <button
+                        key={section.title}
+                        onClick={() => handleNavigation(section.path, section.type)}
+                        className="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg text-left w-full transition-colors"
+                      >
+                        <div className="bg-[#9b4819] bg-opacity-10 p-2 rounded-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                          <FontAwesomeIcon icon={section.icon} className="text-[#9b4819] w-4 h-4" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="font-semibold text-gray-900 text-sm">{section.title}</div>
+                          <div className="text-xs text-gray-600 mt-1 line-clamp-2">{section.description}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </nav>
+          
+          {/* Botão de Contato Desktop */}
+          <div className="hidden lg:flex items-center">
+            <a 
+              href="tel:+14255886654" 
+              className="px-4 py-2 bg-[#9b4819] hover:bg-[#7a3614] text-white rounded-md transition-colors text-sm font-medium"
+            >
+              +1 (425) 588-6654
+            </a>
+          </div>
+          
+          {/* Logo Mobile - centralizado */}
+          <div className="flex lg:hidden items-center absolute left-1/2 transform -translate-x-1/2">
+            <button onClick={() => handleNavigation('/', 'page')} className="flex items-center">
+              <Image 
+                width={35} 
+                height={35} 
+                src="/assets/Logo/logo.png" 
+                alt="Logo da empresa"
+                className="w-9 h-9 object-contain"
+              />
+            </button>
+          </div>
+          
+          {/* Botão Hamburger - apenas mobile */}
+          <button 
+            onClick={toggleMobileMenu} 
+            className="lg:hidden p-2 text-gray-700 hover:text-[#9b4819] transition-colors"
+            aria-label="Abrir menu"
+          >
+            <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
+          </button>
         </div>
-        <div className="hidden lg:flex items-center">
-          <a href="tel:+5511999999999" className="px-4 py-2 bg-[#9b4819] hover:text-white text-white rounded-md">Contato +(206) 9999-8888</a>
-        </div>
-        <button onClick={toggleMobileMenu} className="lg:hidden p-4 text-gray-800">
-          <FontAwesomeIcon icon={faBars} size="lg" />
-        </button>
       </div>
 
-      {/* Menu mobile */}
+      {/* Menu Mobile Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#f4f1e8] z-40 flex flex-col lg:hidden text-[#9b4819]">
-          <button onClick={toggleMobileMenu} className="self-end text-[#9b4819] pt-5">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" className='text-[#9b4819]'/>
-            </svg>
-          </button>
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden">
+          <div className="fixed inset-y-0 right-0 w-full max-w-full bg-[#f4f1e8] shadow-xl">
+            {/* Header do menu mobile */}
+            <div className="flex items-center justify-between p-4 border-b border-[#9b4819] border-opacity-20">
+              <h2 className="text-lg font-semibold text-[#9b4819]">Menu</h2>
+              <button 
+                onClick={toggleMobileMenu} 
+                className="p-2 text-[#9b4819] hover:bg-[#9b4819] hover:bg-opacity-10 rounded-lg transition-colors"
+                aria-label="Fechar menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
-          <ul className="flex flex-col items-start space-y-4 px-3">
-            {menuItems.map((menuItem) => (
-              <li key={menuItem.item} className="w-full border-b border-white last:border-none">
-                <Link href={menuItem.path} className="text-lg text-[#9b4819] flex items-center space-x-3 py-3" onClick={() => { handleHashLinkClick(menuItem.path); toggleMobileMenu(); }}>
-                  <FontAwesomeIcon icon={menuItem.icon} />
-                  <span>{menuItem.item}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+            {/* Lista de menu items */}
+            <nav className="flex flex-col">
+              {menuItems.map((menuItem) => (
+                <button
+                  key={menuItem.item}
+                  onClick={() => handleNavigation(menuItem.path, menuItem.type)}
+                  className="flex items-center space-x-3 px-6 py-4 text-[#9b4819] hover:bg-[#9b4819] hover:bg-opacity-10 transition-colors text-left"
+                >
+                  <FontAwesomeIcon icon={menuItem.icon} className="w-5 h-5" />
+                  <span className="font-medium">{menuItem.item}</span>
+                </button>
+              ))}
+              
+              {/* Botão de contato no mobile */}
+              <div className="px-6 pt-4">
+                <a 
+                  href="tel:+14255886654" 
+                  className="flex items-center justify-center w-full px-4 py-3 bg-[#9b4819] hover:bg-[#7a3614] text-white rounded-lg transition-colors font-medium"
+                >
+                  <FontAwesomeIcon icon={faPhone} className="w-4 h-4 mr-2" />
+                  Ligar Agora
+                </a>
+              </div>
+            </nav>
 
-          <div className="mt-auto p-5 w-full m:flex m:justify-center hidden">
-            <Image width={100} height={100} src={""} alt="Logo da empresa" className="w-44 h-auto hidden" />
+            
           </div>
         </div>
       )}

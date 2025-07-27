@@ -16,14 +16,14 @@ const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-amber-700 min-h-screen text-white p-5 flex flex-col justify-between text-start">
+    <div id="AboutCompany" className="bg-amber-700 min-h-screen text-white p-5 flex flex-col justify-between text-start">
       {/* Header */}
       <div className="max-w-5xl mx-auto w-full pt-16 relative md:flex gap-10">
 
         <div className="flex-1">
           <div className="relative">
             <h1 className="text-5xl md:text-6xl radley-regular text-[#f4f1e8]">
-              About the <span className="relative z-10">Live Hope</span>
+              About the <span className="relative z-10">Any Silva</span>
             </h1>
           </div>
 
@@ -125,7 +125,7 @@ const AboutPage: React.FC = () => {
             </div>
             <div>
               <p className="uppercase tracking-wide text-sm">EMAIL</p>
-              <p className="text-lg">livehopephotography.com</p>
+              <p className="text-lg">any-bispo@outlook.com</p>
             </div>
           </div>
 

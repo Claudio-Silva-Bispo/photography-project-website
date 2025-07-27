@@ -7,16 +7,15 @@ import Footer from '@/components/Footer';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter();
-  const isDashboard = router.pathname.startsWith('/Dashboard');
 
   return (
     <div className="flex flex-col min-h-screen">
-      {!isDashboard && <Navbar />}
+      { <Navbar />}
         <main className="flex-1">
           <Component {...pageProps} />
           
         </main>
-        {!isDashboard && <Footer />}
+        {<Footer />}
     </div>
   );
 }

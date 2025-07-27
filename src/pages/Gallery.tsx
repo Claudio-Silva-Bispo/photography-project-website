@@ -1,83 +1,383 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight, faTimes, faExpand, faDownload } from '@fortawesome/free-solid-svg-icons';
 
-const services = {
-  rooms: [
-    { id: 1, name: 'Cozinha', images: ['/assets/Carrosel/cozinha/20200123_150607.jpg', 'imagem-dois.jpg'] },
-    { id: 2, name: 'Banheiro', images: ['imagem-tres.jpg', 'imagem-quatro.jpg'] },
-    { id: 3, name: 'Sala', images: ['imagem-cinco.jpg'] },
-    { id: 4, name: 'Quarto', images: ['imagem-seis.jpg', 'imagem-sete.jpg', 'imagem-oito.jpg'] },
-    { id: 5, name: 'Demais', images: ['imagem-nove.jpg', 'imagem-dez.jpg'] }
-  ]
-};
+const galleryImages = [
+  {
+    id: 1,
+    src: '/assets/Gallery/baby_party_one.png',
+    alt: 'Baby Party',
+    category: 'criancas',
+    title: 'Festa Infantil'
+  },
+  {
+    id: 2,
+    src: '/assets/Gallery/IMG_3345.jpg',
+    alt: 'Momento único para cada pessoa',
+    category: 'pessoal',
+    title: 'Pessoal'
+  },
+  {
+    id: 3,
+    src: '/assets/Gallery/IMG_3351.jpg',
+    alt: 'Momento único para cada pessoa',
+    category: 'pessoal',
+    title: 'Pessoal'
+  },
+  {
+    id: 4,
+    src: '/assets/Gallery/IMG_5494.png',
+    alt: 'Empresarial',
+    category: 'empresarial',
+    title: 'Para empresarios'
+  },
+  {
+    id: 5,
+    src: '/assets/Gallery/IMG_7454.jpg',
+    alt: 'Bebe a bordo',
+    category: 'gestante',
+    title: 'Gestantes e Cuidados'
+  },
+  {
+    id: 6,
+    src: '/assets/Gallery/IMG_7460.jpg',
+    alt: 'Bebe a bordo',
+    category: 'gestante',
+    title: 'Gestantes e Cuidados'
+  },
+    {
+    id: 7,
+    src: '/assets/Gallery/IMG_7525.jpg',
+    alt: 'Bebe a bordo',
+    category: 'gestante',
+    title: 'Gestantes e Cuidados'
+  },
+    {
+    id: 8,
+    src: '/assets/Gallery/IMG_7901.jpg',
+    alt: 'Baby Party',
+    category: 'criancas',
+    title: 'Festa Infantil'
+  },
+  {
+    id: 9,
+    src: '/assets/Gallery/IMG_8174.jpg',
+    alt: 'Baby Party',
+    category: 'criancas',
+    title: 'Festa Infantil'
+  },
+  {
+    id: 10,
+    src: '/assets/Gallery/baby_one.png',
+    alt: 'Baby Party',
+    category: 'criancas',
+    title: 'Festa Infantil'
+  },
+  {
+    id: 11,
+    src: '/assets/Gallery/baby_two.jpg',
+    alt: 'Baby Party',
+    category: 'criancas',
+    title: 'Festa Infantil'
+  },
+  {
+    id: 12,
+    src: '/assets/Gallery/company_one.png',
+    alt: 'Foto Pessoal',
+    category: 'pessoal',
+    title: 'Pessoal'
+  },
+  {
+    id: 13,
+    src: '/assets/Gallery/cozinheira-baby.png',
+    alt: 'Baby Party',
+    category: 'criancas',
+    title: 'Festa Infantil'
+  },
+  {
+    id: 14,
+    src: '/assets/Gallery/detalhe.jpg',
+    alt: 'Divulgue seus produtos',
+    category: 'empresarial',
+    title: 'Divulgação e momento pessoal'
+  },
+  {
+    id: 15,
+    src: '/assets/Gallery/janela-media-social.png',
+    alt: 'Divulgue seus produtos',
+    category: 'empresarial',
+    title: 'Divulgação e momento pessoal'
+  },
+  {
+    id: 16,
+    src: '/assets/Gallery/maquiagem.jpg',
+    alt: 'Divulgue seus produtos',
+    category: 'empresarial',
+    title: 'Divulgação e momento pessoal'
+  }
+];
+
+const categories = [
+  { id: 'todos', name: 'Todos', count: galleryImages.length },
+  { id: 'criancas', name: 'Criancas', count: galleryImages.filter(img => img.category === 'criancas').length },
+  { id: 'pessoal', name: 'Pessoal', count: galleryImages.filter(img => img.category === 'pessoal').length },
+  { id: 'gestante', name: 'Gestante', count: galleryImages.filter(img => img.category === 'gestante').length },
+  { id: 'empresarial', name: 'Empresarial', count: galleryImages.filter(img => img.category === 'empresarial').length },
+  { id: 'cuidados', name: 'Cuidados', count: galleryImages.filter(img => img.category === 'cuidados').length },
+  { id: 'manutencao', name: 'Manutenção', count: galleryImages.filter(img => img.category === 'manutencao').length }
+];
 
 export default function Gallery() {
-  const [selectedRoomIndex, setSelectedRoomIndex] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('todos');
+  const [filteredImages, setFilteredImages] = useState(galleryImages);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
 
-  const handlePrevClick = () => {
-    setSelectedRoomIndex((prevIndex) =>
-      prevIndex === 0 ? services.rooms.length - 1 : prevIndex - 1
-    );
-    scrollToTop();
+  // Filtrar imagens por categoria
+  useEffect(() => {
+    if (selectedCategory === 'todos') {
+      setFilteredImages(galleryImages);
+    } else {
+      setFilteredImages(galleryImages.filter(img => img.category === selectedCategory));
+    }
+  }, [selectedCategory]);
+
+  // Abrir lightbox
+  const openLightbox = (index: React.SetStateAction<number>) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = 'hidden';
   };
 
-  const handleNextClick = () => {
-    setSelectedRoomIndex((prevIndex) =>
-      prevIndex === services.rooms.length - 1 ? 0 : prevIndex + 1
-    );
-    scrollToTop();
+  // Fechar lightbox
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = 'unset';
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+  // Navegar no lightbox
+  const navigateLightbox = (direction: string) => {
+    if (direction === 'next') {
+      setCurrentImageIndex((prev) => 
+        prev === filteredImages.length - 1 ? 0 : prev + 1
+      );
+    } else {
+      setCurrentImageIndex((prev) => 
+        prev === 0 ? filteredImages.length - 1 : prev - 1
+      );
+    }
   };
 
-  const selectedRoom = services.rooms[selectedRoomIndex];
-  const { name } = selectedRoom;
+  // Teclas do teclado para navegação
+  useEffect(() => {
+    const handleKeyPress = (e: { key: any; }) => {
+      if (!lightboxOpen) return;
+      
+      switch (e.key) {
+        case 'Escape':
+          closeLightbox();
+          break;
+        case 'ArrowLeft':
+          navigateLightbox('prev');
+          break;
+        case 'ArrowRight':
+          navigateLightbox('next');
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [lightboxOpen]);
 
   return (
-    <div>
-      {/* Seção do nome e setas de navegação */}
-      <section className="py-6 bg-[#f4f1e8] pt-10">
-        <div className="container mx-auto text-center mb-8">
-          
+    <div className="min-h-screen bg-[#f4f1e8] pt-20">
+      {/* Header da Galeria */}
+      <section className="py-12 text-center">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#9b4819] mb-4">
+            Nossa Galeria
+          </h1>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            Confira alguns dos nossos melhores trabalhos e serviços realizados com dedicação e qualidade.
+          </p>
         </div>
-          <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-            <Image width={800} height={800} src="/assets/Service/cozinheira.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
-            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Service/baby.jpg" />
-            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Service/cozinheira.jpg" />
+      </section>
 
-            <Image width={800} height={800} src="/assets/Service/sofa.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
-            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/sala/IMG-20200204-WA0022.jpg" />
-            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/sala/20201217_095105.jpg" />
-
-            <Image width={800} height={800} src="/assets/Service/camera.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
-            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Service/imagem1.jpeg" />
-            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/About/pessoal.jpg" />
-
-            <Image width={800} height={800} src="/assets/Service/sofa.jpg" alt="image about kitchen" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square" />
-            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/banheiro/20201125_105927.jpg" />
-            <Image width={800} height={400} alt="" className="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square" src="/assets/Carrosel/banheiro/20201125_151802.jpg" />
-
-            <Image width={800} height={400} src="/assets/Service/janela.jpg" alt="" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 bg-gray-500 aspect-square" />
+      {/* Filtros de Categoria */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
+                  selectedCategory === category.id
+                    ? 'bg-[#9b4819] text-white shadow-lg transform scale-105'
+                    : 'bg-white text-[#9b4819] hover:bg-[#9b4819] hover:text-white shadow-md'
+                }`}
+              >
+                {category.name} ({category.count})
+              </button>
+            ))}
           </div>
-        
-        {/* Botões de navegação na parte inferior */}
-        <div className="flex justify-center mt-6">
+        </div>
+      </section>
+
+      {/* Grid de Imagens */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredImages.map((image, index) => (
+              <div
+                key={image.id}
+                className="group relative bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                onClick={() => openLightbox(index)}
+              >
+                <div className="relative aspect-square overflow-hidden">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                  />
+                  
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                    <FontAwesomeIcon 
+                      icon={faExpand} 
+                      className="text-white opacity-0 group-hover:opacity-100 text-2xl transform scale-75 group-hover:scale-100 transition-all duration-300"
+                    />
+                  </div>
+
+                  {/* Badge da categoria */}
+                  <div className="absolute top-2 left-2 bg-[#9b4819] text-white px-2 py-1 rounded-full text-xs font-medium">
+                    {categories.find(cat => cat.id === image.category)?.name || 'Outros'}
+                  </div>
+                </div>
+
+                {/* Informações da imagem */}
+                <div className="p-4">
+                  <h3 className="font-semibold text-[#9b4819] text-lg mb-1">
+                    {image.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {image.alt}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mensagem se não houver imagens */}
+          {filteredImages.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">
+                Nenhuma imagem encontrada nesta categoria.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
+          {/* Botão Fechar */}
           <button
-            onClick={handlePrevClick}
-            className="p-2 bg-gray-700 text-white rounded-l-full"
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
           >
-            Anterior
+            <FontAwesomeIcon icon={faTimes} size="2x" />
           </button>
+
+          {/* Navegação Anterior */}
           <button
-            onClick={handleNextClick}
-            className="p-2 bg-gray-700 text-white rounded-r-full"
+            onClick={() => navigateLightbox('prev')}
+            className="absolute left-4 text-white hover:text-gray-300 z-10"
           >
-            Próximo
+            <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+          </button>
+
+          {/* Navegação Próxima */}
+          <button
+            onClick={() => navigateLightbox('next')}
+            className="absolute right-4 text-white hover:text-gray-300 z-10"
+          >
+            <FontAwesomeIcon icon={faChevronRight} size="2x" />
+          </button>
+
+          {/* Imagem Principal */}
+          <div className="relative max-w-4xl max-h-full">
+            <Image
+              src={filteredImages[currentImageIndex]?.src}
+              alt={filteredImages[currentImageIndex]?.alt}
+              width={1200}
+              height={800}
+              className="max-w-full max-h-[80vh] object-contain"
+            />
+            
+            {/* Informações da imagem no lightbox */}
+            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white p-4">
+              <h3 className="text-xl font-semibold mb-1">
+                {filteredImages[currentImageIndex]?.title}
+              </h3>
+              <p className="text-gray-300">
+                {filteredImages[currentImageIndex]?.alt}
+              </p>
+              <div className="flex items-center justify-between mt-2">
+                <span className="text-sm text-gray-400">
+                  {currentImageIndex + 1} de {filteredImages.length}
+                </span>
+                <button
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = filteredImages[currentImageIndex]?.src;
+                    link.download = `galeria-${filteredImages[currentImageIndex]?.id}.jpg`;
+                    link.click();
+                  }}
+                  className="flex items-center space-x-2 bg-[#9b4819] hover:bg-[#7a3614] px-3 py-1 rounded text-sm transition-colors"
+                >
+                  <FontAwesomeIcon icon={faDownload} />
+                  <span>Baixar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Indicadores */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {filteredImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentImageIndex ? 'bg-white' : 'bg-gray-500'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Call to Action */}
+      <section className="py-16 bg-[#9b4819] text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Gostou do que viu?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Entre em contato conosco e solicite um orçamento personalizado!
+          </p>
+          <button 
+            onClick={() => window.location.href = 'tel:+14255886654'}
+            className="bg-white text-[#9b4819] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Entrar em Contato
           </button>
         </div>
       </section>

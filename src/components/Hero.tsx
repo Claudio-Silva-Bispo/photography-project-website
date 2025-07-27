@@ -26,7 +26,7 @@ export default function Hero() {
                     </div>
                     
                     {/* Texto principal com animação no nome "Any" */}
-                    <h1 className="text-5xl font-bold leading-none sm:text-6xl">
+                    <h1 className="text-2xl font-bold leading-none sm:text-6xl pt-10 m:pt-0">
                         <span className="italic text-black radley-regular-italic">Hello, </span>
                         <span className="text-[#9b4819] relative inline-block after:content-[''] radley-regular-italic"> I am Any!</span>
                     </h1>
@@ -37,8 +37,8 @@ export default function Hero() {
                     </p>
 
                     <div className="hidden md:flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                        <a rel="noopener noreferrer" href="#contact" className="px-8 py-3 text-lg font-semibold rounded bg-white text-[#9b4819]">Contato</a>
-                        <a rel="noopener noreferrer" href="#price-table" className="px-8 py-3 text-lg font-semibold rounded bg-[#9b4819] text-white">Tabela Preço</a>
+                        <a rel="noopener noreferrer" href="#ContactSection" className="px-8 py-3 text-lg font-semibold rounded bg-white text-[#9b4819]">Contato</a>
+                        <a rel="noopener noreferrer" href="#PriceTable" className="px-8 py-3 text-lg font-semibold rounded bg-[#9b4819] text-white">Tabela Preço</a>
                     </div>
                     
                 </div>

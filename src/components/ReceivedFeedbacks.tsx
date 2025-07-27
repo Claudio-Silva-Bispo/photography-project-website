@@ -27,12 +27,12 @@ export default function ReceberFeedbacks() {
     };
 
     return (
-        <section className='feedback-background min-h-[70vh] flex flex-col md:flex-row justify-between items-center px-4 md:px-8 lg:px-16' id='receber-feedback' style={{
+        <section id='Testimonials' className='feedback-background min-h-[70vh] flex flex-col md:flex-row justify-between items-center px-4 md:px-8 lg:px-16' style={{
             backgroundSize: 'cover',
             backgroundPosition: 'center'
         }}>
             {/* Left side - Feedbacks */}
-            <div className="w-full md:w-1/2 flex flex-col gap-10 py-16 md:py-20">
+            <div className="w-full md:w-1/2 flex flex-col gap-10 py-16 md:py-20" >
                 <div className="text-center md:text-left before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto md:before:mx-0 before:bg-[#314027] pt-10 md:pt-0 flex flex-col gap-3">
                     <h3 className="text-4xl md:text-5xl text-[#314027] mb-5 md:mb-0 text-center md:text-left font-bold">O que nossos clientes dizem</h3>
                     
