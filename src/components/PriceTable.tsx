@@ -88,7 +88,7 @@ export default function ServicePlan() {
       <div className="container md:px-4 mx-auto">
         
         <div className="max-w-2xl mx-auto md:mb-16 md:text-center p-6 md:p-0">
-          <span className="tracking-wider uppercase text-[#9b4819] text-4xl md:text-5xl">
+          <span className="text-5xl text-[#9b4819] md:mb-0 w-full">
             Tabela de serviços
           </span>
           <h2 className="text-2xl lg:text-2xl pt-5 md:pt-0 text-[#b45309]">

@@ -338,8 +338,6 @@ export default function Navbar() {
                 </a>
               </div>
             </nav>
-
-            
           </div>
         </div>
       )}

@@ -71,7 +71,7 @@ export default function CustomizedAccordions() {
     <section className='min-h-[60vh] flex flex-col justify-center md:p-20 m:pt-20 p-5' id='tips'>
       
       <div className="before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:bg-[#9b4819] pt-20 md:p-0 flex flex-col mb-6">
-        <h2 className="text-5xl text-[#9b4819] md:mb-0 font-bold w-full">Principais dúvidas</h2>
+        <h2 className="text-5xl text-[#9b4819] md:mb-0 w-full">Principais dúvidas</h2>
       </div>
 
       <div className="space-y-4">
@@ -83,7 +83,7 @@ export default function CustomizedAccordions() {
             <Typography className='font-bold text-md sm:text-xl text-gray-700'>Retratos Individuais</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
+            <div className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <strong className="text-[#9b4819]">📸 Serviço:</strong>
@@ -109,7 +109,7 @@ export default function CustomizedAccordions() {
                   <p>• Preview: 24-48 horas</p>
                 </div>
               </div>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
 
@@ -120,7 +120,7 @@ export default function CustomizedAccordions() {
             <Typography className='font-bold text-md sm:text-xl text-gray-700'>Smash the Cake</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
+            <div className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <strong className="text-[#9b4819]">🎂 Serviço:</strong>
@@ -146,7 +146,7 @@ export default function CustomizedAccordions() {
                   <p>• Álbum digital incluso</p>
                 </div>
               </div>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
 
@@ -157,7 +157,7 @@ export default function CustomizedAccordions() {
             <Typography className='font-bold text-md sm:text-xl text-gray-700'>Ensaios na Natureza</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
+            <div className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <strong className="text-[#9b4819]">🌿 Serviço:</strong>
@@ -183,7 +183,7 @@ export default function CustomizedAccordions() {
                   <p>• Tratamento especial de luz natural</p>
                 </div>
               </div>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
 
@@ -194,7 +194,7 @@ export default function CustomizedAccordions() {
             <Typography className='font-bold text-md sm:text-xl text-gray-700'>Ensaio Gestante</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
+            <div className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <strong className="text-[#9b4819]">🤱 Serviço:</strong>
@@ -221,7 +221,7 @@ export default function CustomizedAccordions() {
                   <p>• Poses especializadas e confortáveis</p>
                 </div>
               </div>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
 
@@ -232,7 +232,7 @@ export default function CustomizedAccordions() {
             <Typography className='font-bold text-md sm:text-xl text-gray-700'>Ensaios Familiares</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
+            <div className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <strong className="text-[#9b4819]">👨‍👩‍👧‍👦 Serviço:</strong>
@@ -260,7 +260,7 @@ export default function CustomizedAccordions() {
                   <p>• Álbum familiar disponível</p>
                 </div>
               </div>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
 
@@ -271,7 +271,7 @@ export default function CustomizedAccordions() {
             <Typography className='font-bold text-md sm:text-xl text-gray-700'>Ensaios Infantis</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
+            <div className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <strong className="text-[#9b4819]">👶 Serviço:</strong>
@@ -297,7 +297,7 @@ export default function CustomizedAccordions() {
                   <p>• Edição lúdica e colorida</p>
                 </div>
               </div>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
 
@@ -308,7 +308,7 @@ export default function CustomizedAccordions() {
             <Typography className='font-bold text-md sm:text-xl text-gray-700'>Cobertura de Eventos</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
+            <div className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <strong className="text-[#9b4819]">🎉 Serviço:</strong>
@@ -337,10 +337,9 @@ export default function CustomizedAccordions() {
                   <p>• Galeria online completa</p>
                 </div>
               </div>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
-
       </div>
     </section>
   );

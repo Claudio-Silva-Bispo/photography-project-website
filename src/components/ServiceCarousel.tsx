@@ -28,21 +28,21 @@ const ServiceCarousel: React.FC = () => {
       description: 'Ensaios personalizados para qualquer ocasião especial do seu bebê.', 
       icon: FaPhotoVideo, 
       details: 'Saiba mais', 
-      images: ['/assets/Gallery/IMG_7901.jpg'] 
+      images: ['/assets/Service/hero_crianca.jpg'] 
     },
     { 
       title: 'Ensaios Familiares', 
       description: 'Ensaios personalizados com sua família para eventos especiais como natal e comemorações.', 
       icon: FaHeart, 
       details: 'Saiba mais', 
-      images: ['/assets/Service/familia/familia-natureza.jpg'] 
+      images: ['/assets/Service/service_familia.jpg'] 
     },
     { 
       title: 'Temáticos', 
       description: 'Monte uma galeria diferenciada para suas festas de natal e datas comemorativas.', 
       icon: FaLaptopMedical, 
       details: 'Saiba mais', 
-      images: ['/assets/Service/social-media/janela-media-social.png'] 
+      images: ['/assets/Service/espaco_natal.png'] 
     },
     { 
       title: 'Gestantes', 
@@ -54,10 +54,10 @@ const ServiceCarousel: React.FC = () => {
   ];
 
   return (
-    <section className='scrollbar-none p-2 md:p-5 bg-[#f4f1e8] pb-10 md:pb-0' id='services'>
+    <section className='scrollbar-none p-0 md:p-5 bg-[#f4f1e8] pb-10 md:pb-0' id='services'>
       <div className="text-gray-700 flex justify-center items-center rounded-md">
         <div className="container text-start p-6">
-          <h2 className="text-4xl font-bold text-[#9b4819]">Serviços de Fotografia</h2>
+          <h2 className="text-5xl text-[#9b4819] md:mb-0 w-full">Serviços de Fotografia</h2>
           <p className="mt-4 text-2xl text-gray-600">Capturamos momentos inesquecíveis com alta qualidade.</p>
         </div>
       </div>

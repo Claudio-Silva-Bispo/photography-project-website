@@ -7,125 +7,152 @@ const galleryImages = [
   {
     id: 1,
     src: '/assets/Gallery/baby_party_one.png',
-    alt: 'Baby Party',
+    alt: 'Acompanhamento mensal de 0 até 1 ano',
     category: 'criancas',
-    title: 'Festa Infantil'
+    title: 'Smash the Cake'
   },
   {
     id: 2,
     src: '/assets/Gallery/IMG_3345.jpg',
     alt: 'Momento único para cada pessoa',
-    category: 'pessoal',
-    title: 'Pessoal'
+    category: 'retrato',
+    title: 'Retrato'
   },
   {
     id: 3,
     src: '/assets/Gallery/IMG_3351.jpg',
     alt: 'Momento único para cada pessoa',
-    category: 'pessoal',
-    title: 'Pessoal'
+    category: 'retrato',
+    title: 'Retrato'
   },
   {
     id: 4,
     src: '/assets/Gallery/IMG_5494.png',
-    alt: 'Empresarial',
+    alt: 'Cada mulher tem sua luz única para ser capturada.',
     category: 'empresarial',
-    title: 'Para empresarios'
+    title: 'Retrato'
   },
   {
     id: 5,
     src: '/assets/Gallery/IMG_7454.jpg',
-    alt: 'Bebe a bordo',
+    alt: 'Eternizando a espera mais linda da sua vida.',
     category: 'gestante',
-    title: 'Gestantes e Cuidados'
+    title: 'Gestantes'
   },
   {
     id: 6,
     src: '/assets/Gallery/IMG_7460.jpg',
-    alt: 'Bebe a bordo',
+    alt: 'Capturando a beleza única da maternidade.',
     category: 'gestante',
-    title: 'Gestantes e Cuidados'
+    title: 'Gestantes'
   },
     {
     id: 7,
     src: '/assets/Gallery/IMG_7525.jpg',
-    alt: 'Bebe a bordo',
+    alt: 'Cada curva conta uma história de amor.',
     category: 'gestante',
-    title: 'Gestantes e Cuidados'
+    title: 'Gestantes'
   },
     {
     id: 8,
     src: '/assets/Gallery/IMG_7901.jpg',
-    alt: 'Baby Party',
+    alt: 'Acompanhamento mensal de 0 até 1 ano',
     category: 'criancas',
-    title: 'Festa Infantil'
+    title: 'Smash the Cake'
   },
   {
     id: 9,
     src: '/assets/Gallery/IMG_8174.jpg',
-    alt: 'Baby Party',
+    alt: 'Acompanhamento mensal de 0 até 1 ano',
     category: 'criancas',
-    title: 'Festa Infantil'
+    title: 'Smash the Cake'
   },
   {
     id: 10,
     src: '/assets/Gallery/baby_one.png',
-    alt: 'Baby Party',
+    alt: 'Acompanhamento mensal de 0 até 1 ano',
     category: 'criancas',
-    title: 'Festa Infantil'
+    title: 'Smash the Cake'
   },
   {
     id: 11,
     src: '/assets/Gallery/baby_two.jpg',
-    alt: 'Baby Party',
+    alt: 'Acompanhamento mensal de 0 até 1 ano',
     category: 'criancas',
-    title: 'Festa Infantil'
+    title: 'Smash the Cake'
   },
   {
     id: 12,
     src: '/assets/Gallery/company_one.png',
-    alt: 'Foto Pessoal',
+    alt: 'Desperte sua beleza natural através das lentes.',
     category: 'pessoal',
-    title: 'Pessoal'
+    title: 'Retrato'
   },
   {
     id: 13,
     src: '/assets/Gallery/cozinheira-baby.png',
-    alt: 'Baby Party',
+    alt: 'Acompanhamento mensal de 0 até 1 ano',
     category: 'criancas',
-    title: 'Festa Infantil'
+    title: 'Smash the Cake'
   },
   {
     id: 14,
     src: '/assets/Gallery/detalhe.jpg',
-    alt: 'Divulgue seus produtos',
-    category: 'empresarial',
-    title: 'Divulgação e momento pessoal'
+    alt: 'Retratos que revelam sua essência feminina.',
+    category: 'retrato',
+    title: 'Retrato'
   },
   {
     id: 15,
     src: '/assets/Gallery/janela-media-social.png',
-    alt: 'Divulgue seus produtos',
-    category: 'empresarial',
-    title: 'Divulgação e momento pessoal'
+    alt: 'Sua beleza, nossa arte',
+    category: 'retrato',
+    title: 'Retrato'
   },
   {
     id: 16,
     src: '/assets/Gallery/maquiagem.jpg',
-    alt: 'Divulgue seus produtos',
-    category: 'empresarial',
-    title: 'Divulgação e momento pessoal'
+    alt: 'Capturando a força e delicadeza que há em você.',
+    category: 'retrato',
+    title: 'Retrato'
+  },
+  {
+    id: 17,
+    src: '/assets/Service/hero_crianca.jpg',
+    alt: 'Acompanhamento mensal de 0 até 1 ano',
+    category: 'retrato',
+    title: 'Smash the Cake'
+  },
+  {
+    id: 18,
+    src: '/assets/Service/service_familia.jpg',
+    alt: 'Onde dois corações batem como um.',
+    category: 'familia',
+    title: 'Familia'
+  },
+  {
+    id: 19,
+    src: '/assets/Service/service_crianca.jpg',
+    alt: 'Descubra-se através do nosso olhar.',
+    category: 'familia',
+    title: 'Familia'
+  },
+  {
+    id: 20,
+    src: '/assets/Service/espaco_natal.png',
+    alt: 'Descubra-se através do nosso olhar.',
+    category: 'tematico',
+    title: 'Tematico'
   }
 ];
 
 const categories = [
   { id: 'todos', name: 'Todos', count: galleryImages.length },
   { id: 'criancas', name: 'Criancas', count: galleryImages.filter(img => img.category === 'criancas').length },
-  { id: 'pessoal', name: 'Pessoal', count: galleryImages.filter(img => img.category === 'pessoal').length },
+  { id: 'familia', name: 'Familia', count: galleryImages.filter(img => img.category === 'familia').length },
   { id: 'gestante', name: 'Gestante', count: galleryImages.filter(img => img.category === 'gestante').length },
-  { id: 'empresarial', name: 'Empresarial', count: galleryImages.filter(img => img.category === 'empresarial').length },
-  { id: 'cuidados', name: 'Cuidados', count: galleryImages.filter(img => img.category === 'cuidados').length },
-  { id: 'manutencao', name: 'Manutenção', count: galleryImages.filter(img => img.category === 'manutencao').length }
+  { id: 'retrato', name: 'Retrato', count: galleryImages.filter(img => img.category === 'retrato').length },
+  { id: 'tematico', name: 'Tematico', count: galleryImages.filter(img => img.category === 'tematico').length },
 ];
 
 export default function Gallery() {

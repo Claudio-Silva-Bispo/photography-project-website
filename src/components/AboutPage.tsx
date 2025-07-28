@@ -22,7 +22,7 @@ const AboutPage: React.FC = () => {
 
         <div className="flex-1">
           <div className="relative">
-            <h1 className="text-5xl md:text-6xl radley-regular text-[#f4f1e8]">
+            <h1 className="text-5xl text-[#f4f1e8]">
               About the <span className="relative z-10">Any Silva</span>
             </h1>
           </div>
@@ -30,7 +30,7 @@ const AboutPage: React.FC = () => {
           {/* Description */}
           <div className="mt-12 text-2xl space-y-4 sm:max-w-3xl carlito-regular">
             <p>
-              Live Hope é uma empresa de fotografia apaixonada por capturar
+              Sou apaixonada por capturar
               momentos com elegância e autenticidade.
             </p>
             <p>

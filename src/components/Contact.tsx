@@ -8,7 +8,7 @@ export default function Contact(){
 
                 <div>
                     <div className="py-6 md:py-0 md:px-6 flex flex-col justify-center p-2 md:p-0 w-full md:w-auto">
-                        <h1 className="text-5xl text-[#9b4819] radley-regular">Contato</h1>
+                        <h1 className="text-5xl text-[#9b4819] md:mb-0 w-full">Contato</h1>
                         <p className="pt-5 pb-4 text-xl text-[#9b4819] carlito-regular">Preenchendo este formulário simples, nossa equipe entrará em contato com você dentro de duas horas.</p>
                     </div>
 
@@ -36,7 +36,7 @@ export default function Contact(){
                             
                     </div>
 
-                    <div className="py-6 md:py-0 md:px-6 flex flex-col justify-center p-2 md:p-0 w-full md:w-auto">
+                    <div className="py-6 md:py-0 md:px-6 flex flex-col justify-center p-2 md:p-0 w-full md:w-auto hidden md:flex">
                         <p className="pt-5 pb-4 text-xl text-[#9b4819] carlito-regular">Conte-nos sua história e criaremos as imagens perfeitas para eternizá-la. Estamos ansiosos para conhecer sua visão!</p>
                     </div>
                 </div>
@@ -78,11 +78,9 @@ export default function Contact(){
                                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                                 </svg>
-                                <span className='text-black carlito-regular'>livehopephotografy@gmail.com</span>
+                                <span className='text-black carlito-regular'>any-bispo@outlook.com</span>
                             </p>
-
-                            
-                    </div>
+                </div>
 
                 
             </div>
