@@ -29,7 +29,7 @@ const galleryImages = [
     id: 4,
     src: '/assets/Gallery/IMG_5494.png',
     alt: 'Cada mulher tem sua luz única para ser capturada.',
-    category: 'empresarial',
+    category: 'retrato',
     title: 'Retrato'
   },
   {
@@ -85,7 +85,7 @@ const galleryImages = [
     id: 12,
     src: '/assets/Gallery/company_one.png',
     alt: 'Desperte sua beleza natural através das lentes.',
-    category: 'pessoal',
+    category: 'retrato',
     title: 'Retrato'
   },
   {
