@@ -124,7 +124,7 @@ export default function CustomizedAccordions() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <strong className="text-[#9b4819]">🎂 Serviço:</strong>
-                  <p>Ensaio temático para o primeiro aniversário do bebê, incluindo cenário personalizado e bolo para destruição.</p>
+                  <p>Ensaio temático para o primeiro aniversário do bebê, incluindo cenário personalizado.</p>
                   
                   <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
                   <p>$250/sessão • Duração: 1-2 horas</p>
@@ -172,9 +172,9 @@ export default function CustomizedAccordions() {
                 <div>
                   <strong className="text-[#9b4819]">📍 Locais disponíveis:</strong>
                   <ul className="list-disc list-inside ml-2">
-                    <li>Parques urbanos (incluso)</li>
+                    <li>Parques urbanos</li>
                     <li>Jardins</li>
-                    <li>Praias e lagos</li>
+                    <li>Lagos</li>
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
@@ -201,7 +201,7 @@ export default function CustomizedAccordions() {
                   <p>Ensaio especializado para gestantes, capturando a beleza e emoção desta fase única da vida.</p>
                   
                   <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$200/sessão • Duração: 1h</p>
+                  <p>$180/hora</p>
                   
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
                   <p>Gestante + parceiro + até 2 filhos</p>
@@ -212,7 +212,6 @@ export default function CustomizedAccordions() {
                     <li>Estúdio confortável (incluso)</li>
                     <li>Residência</li>
                     <li>Jardins e parques</li>
-                    <li>Praia (golden hour)</li>
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
@@ -239,19 +238,18 @@ export default function CustomizedAccordions() {
                   <p>Ensaios familiares para capturar a união e amor entre todos os membros da família.</p>
                   
                   <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$180/hora • Até 5 pessoas: $200/hora para 6+</p>
+                  <p>$180/hora</p>
                   
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
-                  <p>Até 8 pessoas (família estendida)</p>
+                  <p>Até 5 pessoas</p>
                 </div>
                 <div>
                   <strong className="text-[#9b4819]">📍 Locais disponíveis:</strong>
                   <ul className="list-disc list-inside ml-2">
-                    <li>Estúdio amplo (incluso)</li>
+                    <li>Estúdio</li>
                     <li>Residência familiar</li>
                     <li>Parques e praças</li>
                     <li>Locais temáticos</li>
-                    <li>Chácaras e fazendas</li>
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
@@ -278,7 +276,7 @@ export default function CustomizedAccordions() {
                   <p>Ensaios especializados para crianças, com paciência e técnicas específicas para capturar sua essência natural.</p>
                   
                   <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$160/hora • Sessões flexíveis</p>
+                  <p>$250/hora</p>
                   
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
                   <p>Até 3 crianças + 2 responsáveis</p>
@@ -286,9 +284,8 @@ export default function CustomizedAccordions() {
                 <div>
                   <strong className="text-[#9b4819]">📍 Locais disponíveis:</strong>
                   <ul className="list-disc list-inside ml-2">
-                    <li>Estúdio lúdico (incluso)</li>
                     <li>Residência</li>
-                    <li>Parques infantis</li>
+                    <li>Parques</li>
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
@@ -301,45 +298,7 @@ export default function CustomizedAccordions() {
           </AccordionDetails>
         </Accordion>
 
-        {/* Eventos */}
-        <Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
-          <AccordionSummary aria-controls="panel7d-content" id="panel7d-header">
-            <CelebrationIcon className='mr-3 text-[#9b4819]'/>
-            <Typography className='font-bold text-md sm:text-xl text-gray-700'>Cobertura de Eventos</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div className='flex flex-col gap-3 text-gray-600 text-sm sm:text-lg'>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <strong className="text-[#9b4819]">🎉 Serviço:</strong>
-                  <p>Cobertura fotográfica completa para aniversários, formaturas, celebrações e eventos especiais.</p>
-                  
-                  <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$250/hora • Mínimo 2 horas</p>
-                  <p>Eventos +6h: $100/hora adicional</p>
-                  
-                  <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
-                  <p>Sem limite de convidados</p>
-                </div>
-                <div>
-                  <strong className="text-[#9b4819]">📍 Locais disponíveis:</strong>
-                  <ul className="list-disc list-inside ml-2">
-                    <li>Salões de festa (incluso)</li>
-                    <li>Residências (+$30)</li>
-                    <li>Clubes e buffets (+$40)</li>
-                    <li>Espaços externos (+$50)</li>
-                    <li>Locais corporativos (+$60)</li>
-                  </ul>
-                  
-                  <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
-                  <p>• Fotos editadas: 15-20 dias úteis</p>
-                  <p>• Preview destaque: 3-5 dias</p>
-                  <p>• Galeria online completa</p>
-                </div>
-              </div>
-            </div>
-          </AccordionDetails>
-        </Accordion>
+
       </div>
     </section>
   );

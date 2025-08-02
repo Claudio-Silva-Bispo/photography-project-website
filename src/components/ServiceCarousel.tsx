@@ -28,14 +28,14 @@ const ServiceCarousel: React.FC = () => {
       description: 'Ensaios personalizados para qualquer ocasião especial do seu bebê.', 
       icon: FaPhotoVideo, 
       details: 'Saiba mais', 
-      images: ['/assets/Service/hero_crianca.jpg'] 
+      images: ['/assets/Service/service_crianca.jpg'] 
     },
     { 
       title: 'Ensaios Familiares', 
       description: 'Ensaios personalizados com sua família para eventos especiais como natal e comemorações.', 
       icon: FaHeart, 
       details: 'Saiba mais', 
-      images: ['/assets/Service/service_familia.jpg'] 
+      images: ['/assets/Service/service_family.jpg'] 
     },
     { 
       title: 'Temáticos', 
@@ -115,7 +115,7 @@ const ServiceCarousel: React.FC = () => {
                       <img 
                         src={image} 
                         alt={`Imagem ${idx + 1}`} 
-                        className="w-full h-[300px] object-cover rounded-md" 
+                        className="w-full h-[300px] object-contain rounded-md" 
                       />
                     </SwiperSlide>
                   ))}

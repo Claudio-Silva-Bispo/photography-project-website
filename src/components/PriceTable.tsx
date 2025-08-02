@@ -16,7 +16,6 @@ export default function ServicePlan() {
         'Uma hora de ensaio',
         'Pacote com Trinta fotos editadas',
         'Edição em todas as fotos ou fotos originais',
-        'Preço $150.00 pela sessão'
       ],
       buttonText: 'Start now',
       highlighted: false
@@ -48,7 +47,7 @@ export default function ServicePlan() {
         'Cenário incluso',
         'Pacote com Trinta fotos editadas',
         'Atendimento personalizado para seu baby',
-        'Valor do Pacote de $250.00'
+        'Uma hora de sessão'
       ],
       buttonText: 'Quote free',
       highlighted: false
@@ -62,10 +61,9 @@ export default function ServicePlan() {
       price: '$180.00',
       features: [
         'Uma hora de ensaio',
-        'Pacote com Cinquenta fotos editadas',
+        'Pacote com Trinta fotos editadas',
         'Poses especializadas para gestantes',
         'Acompanhante incluso no ensaio',
-        'Preço $180.00 pela sessão'
       ],
       buttonText: 'Agendar',
       highlighted: false
