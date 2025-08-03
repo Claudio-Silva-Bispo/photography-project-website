@@ -11,13 +11,13 @@ const galleryImages = [
     category: 'criancas',
     title: 'Smash the Cake'
   },
-  {
-    id: 2,
-    src: '/assets/Gallery/IMG_3345.jpg',
-    alt: 'Momento único para cada pessoa',
-    category: 'retrato',
-    title: 'Retrato'
-  },
+  // {
+  //   id: 2,
+  //   src: '/assets/Gallery/IMG_3345.jpg',
+  //   alt: 'Momento único para cada pessoa',
+  //   category: 'retrato',
+  //   title: 'Retrato'
+  // },
   {
     id: 3,
     src: '/assets/Gallery/IMG_3351.jpg',
@@ -25,13 +25,13 @@ const galleryImages = [
     category: 'retrato',
     title: 'Retrato'
   },
-  {
-    id: 4,
-    src: '/assets/Gallery/IMG_5494.png',
-    alt: 'Cada mulher tem sua luz única para ser capturada.',
-    category: 'retrato',
-    title: 'Retrato'
-  },
+  // {
+  //   id: 4,
+  //   src: '/assets/Gallery/IMG_5494.png',
+  //   alt: 'Cada mulher tem sua luz única para ser capturada.',
+  //   category: 'retrato',
+  //   title: 'Retrato'
+  // },
   {
     id: 5,
     src: '/assets/Gallery/IMG_7454.jpg',
@@ -39,13 +39,13 @@ const galleryImages = [
     category: 'gestante',
     title: 'Gestantes'
   },
-  {
-    id: 6,
-    src: '/assets/Gallery/IMG_7460.jpg',
-    alt: 'Capturando a beleza única da maternidade.',
-    category: 'gestante',
-    title: 'Gestantes'
-  },
+  // {
+  //   id: 6,
+  //   src: '/assets/Gallery/IMG_7460.jpg',
+  //   alt: 'Capturando a beleza única da maternidade.',
+  //   category: 'gestante',
+  //   title: 'Gestantes'
+  // },
     {
     id: 7,
     src: '/assets/Gallery/IMG_7525.jpg',
@@ -53,13 +53,13 @@ const galleryImages = [
     category: 'gestante',
     title: 'Gestantes'
   },
-    {
-    id: 8,
-    src: '/assets/Gallery/IMG_7901.jpg',
-    alt: 'Acompanhamento mensal de 0 até 1 ano',
-    category: 'criancas',
-    title: 'Smash the Cake'
-  },
+  //   {
+  //   id: 8,
+  //   src: '/assets/Gallery/IMG_7901.jpg',
+  //   alt: 'Acompanhamento mensal de 0 até 1 ano',
+  //   category: 'criancas',
+  //   title: 'Smash the Cake'
+  // },
   {
     id: 9,
     src: '/assets/Gallery/IMG_8174.jpg',
@@ -67,13 +67,13 @@ const galleryImages = [
     category: 'criancas',
     title: 'Smash the Cake'
   },
-  {
-    id: 10,
-    src: '/assets/Gallery/baby_one.png',
-    alt: 'Acompanhamento mensal de 0 até 1 ano',
-    category: 'criancas',
-    title: 'Smash the Cake'
-  },
+  // {
+  //   id: 10,
+  //   src: '/assets/Gallery/baby_one.png',
+  //   alt: 'Acompanhamento mensal de 0 até 1 ano',
+  //   category: 'criancas',
+  //   title: 'Smash the Cake'
+  // },
   {
     id: 11,
     src: '/assets/Gallery/baby_two.jpg',
@@ -102,27 +102,27 @@ const galleryImages = [
     category: 'retrato',
     title: 'Retrato'
   },
-  {
-    id: 15,
-    src: '/assets/Gallery/janela-media-social.png',
-    alt: 'Sua beleza, nossa arte',
-    category: 'retrato',
-    title: 'Retrato'
-  },
-  {
-    id: 16,
-    src: '/assets/Gallery/maquiagem.jpg',
-    alt: 'Capturando a força e delicadeza que há em você.',
-    category: 'retrato',
-    title: 'Retrato'
-  },
-  {
-    id: 17,
-    src: '/assets/Service/hero_crianca.jpg',
-    alt: 'Acompanhamento mensal de 0 até 1 ano',
-    category: 'retrato',
-    title: 'Smash the Cake'
-  },
+  // {
+  //   id: 15,
+  //   src: '/assets/Gallery/janela-media-social.png',
+  //   alt: 'Sua beleza, nossa arte',
+  //   category: 'retrato',
+  //   title: 'Retrato'
+  // },
+  // {
+  //   id: 16,
+  //   src: '/assets/Gallery/maquiagem.jpg',
+  //   alt: 'Capturando a força e delicadeza que há em você.',
+  //   category: 'retrato',
+  //   title: 'Retrato'
+  // },
+  // {
+  //   id: 17,
+  //   src: '/assets/Service/hero_crianca.jpg',
+  //   alt: 'Acompanhamento mensal de 0 até 1 ano',
+  //   category: 'retrato',
+  //   title: 'Smash the Cake'
+  // },
   {
     id: 18,
     src: '/assets/Service/service_familia.jpg',
