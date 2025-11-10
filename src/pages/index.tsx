@@ -17,7 +17,7 @@ export default function Home() {
       <ServiceCarousel/>
       <AboutPage/>
       <ReceivedFeedbacks/>
-      <PriceTable/>
+      {/* <PriceTable/> */}
       <Accordion/>
     </div>
     

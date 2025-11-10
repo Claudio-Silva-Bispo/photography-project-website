@@ -89,8 +89,8 @@ export default function CustomizedAccordions() {
                   <strong className="text-[#9b4819]">📸 Serviço:</strong>
                   <p>Ensaios fotográficos individuais personalizados para destacar sua personalidade única.</p>
                   
-                  <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$150/hora • Pacote mínimo: 1 hora</p>
+                  {/* <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
+                  <p>$150/hora • Pacote mínimo: 1 hora</p> */}
                   
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
                   <p>1 pessoa principal + 1 acompanhante opcional</p>
@@ -105,8 +105,8 @@ export default function CustomizedAccordions() {
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
-                  <p>• Fotos editadas: 10-15 dias úteis</p>
-                  <p>• Preview: 24-48 horas</p>
+                  <p>• Fotos editadas: 15 dias úteis</p>
+                  <p>• Preview rápido: 48 horas úteis</p>
                 </div>
               </div>
             </div>
@@ -126,8 +126,8 @@ export default function CustomizedAccordions() {
                   <strong className="text-[#9b4819]">🎂 Serviço:</strong>
                   <p>Ensaio temático para o primeiro aniversário do bebê, incluindo cenário personalizado.</p>
                   
-                  <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$250/sessão • Duração: 1-2 horas</p>
+                  {/* <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
+                  <p>$250/sessão • Duração: 1-2 horas</p> */}
                   
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
                   <p>Bebê + até 4 familiares</p>
@@ -141,8 +141,8 @@ export default function CustomizedAccordions() {
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
-                  <p>• Fotos editadas: 10-15 dias úteis</p>
-                  <p>• Preview rápido: 48 horas</p>
+                  <p>• Fotos editadas: 15 dias úteis</p>
+                  <p>• Preview rápido: 48 horas úteis</p>
                   <p>• Álbum digital incluso</p>
                 </div>
               </div>
@@ -163,8 +163,8 @@ export default function CustomizedAccordions() {
                   <strong className="text-[#9b4819]">🌿 Serviço:</strong>
                   <p>Ensaios fotográficos em ambientes naturais, aproveitando a luz natural e paisagens deslumbrantes.</p>
                   
-                  <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$180/hora</p>
+                  {/* <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
+                  <p>$180/hora</p> */}
                   
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
                   <p>Até 6 pessoas por sessão</p>
@@ -178,8 +178,8 @@ export default function CustomizedAccordions() {
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
-                  <p>• Fotos editadas: 10-15 dias úteis</p>
-                  <p>• Seleção prévia: 2-3 dias</p>
+                  <p>• Fotos editadas: 15 dias úteis</p>
+                  <p>• Preview rápido: 48 horas úteis</p>
                   <p>• Tratamento especial de luz natural</p>
                 </div>
               </div>
@@ -200,8 +200,8 @@ export default function CustomizedAccordions() {
                   <strong className="text-[#9b4819]">🤱 Serviço:</strong>
                   <p>Ensaio especializado para gestantes, capturando a beleza e emoção desta fase única da vida.</p>
                   
-                  <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$180/hora</p>
+                  {/* <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
+                  <p>$180/hora</p> */}
                   
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
                   <p>Gestante + parceiro + até 2 filhos</p>
@@ -215,8 +215,8 @@ export default function CustomizedAccordions() {
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
-                  <p>• Fotos editadas: 10-15 dias úteis</p>
-                  <p>• Gallery online: 3 dias</p>
+                  <p>• Fotos editadas: 15 dias úteis</p>
+                  <p>• Preview rápido: 48 horas úteis</p>
                   <p>• Poses especializadas e confortáveis</p>
                 </div>
               </div>
@@ -237,9 +237,9 @@ export default function CustomizedAccordions() {
                   <strong className="text-[#9b4819]">👨‍👩‍👧‍👦 Serviço:</strong>
                   <p>Ensaios familiares para capturar a união e amor entre todos os membros da família.</p>
                   
-                  <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
+                  {/* <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
                   <p>$180/hora</p>
-                  
+                   */}
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
                   <p>Até 5 pessoas</p>
                 </div>
@@ -253,8 +253,8 @@ export default function CustomizedAccordions() {
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
-                  <p>• Fotos editadas: 10-14 dias úteis</p>
-                  <p>• Galeria online: 4-5 dias</p>
+                  <p>• Fotos editadas: 15 dias úteis</p>
+                  <p>• Preview rápido: 48 horas úteis</p>
                   <p>• Álbum familiar disponível</p>
                 </div>
               </div>
@@ -275,8 +275,8 @@ export default function CustomizedAccordions() {
                   <strong className="text-[#9b4819]">👶 Serviço:</strong>
                   <p>Ensaios especializados para crianças, com paciência e técnicas específicas para capturar sua essência natural.</p>
                   
-                  <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
-                  <p>$250/hora</p>
+                  {/* <strong className="text-[#9b4819] mt-3 block">💰 Investimento:</strong>
+                  <p>$250/hora</p> */}
                   
                   <strong className="text-[#9b4819] mt-3 block">👥 Capacidade:</strong>
                   <p>Até 3 crianças + 2 responsáveis</p>
@@ -289,8 +289,8 @@ export default function CustomizedAccordions() {
                   </ul>
                   
                   <strong className="text-[#9b4819] mt-3 block">⏰ Prazo de entrega:</strong>
-                  <p>• Fotos editadas: 10-15 dias úteis</p>
-                  <p>• Preview rápido: 48 horas</p>
+                  <p>• Fotos editadas: 15 dias úteis</p>
+                  <p>• Preview rápido: 48 horas úteis</p>
                   <p>• Edição lúdica e colorida</p>
                 </div>
               </div>

@@ -16,11 +16,11 @@ export default function Navbar() {
   const menuItems: Array<{ item: string, path: string, icon: any, type: 'page' | 'section' }> = [
     { item: 'Home', path: '/', icon: faHome, type: 'page' },
     { item: 'Sobre nós', path: '#about', icon: faBuilding, type: 'section' },
-    { item: 'Contato', path: '#contact', icon: faPhone, type: 'section' },
-    { item: 'Orçamento', path: '#quote', icon: faCalendarAlt, type: 'section' },
-    { item: 'Tabela preço', path: '#price-table', icon: faMoneyCheckDollar, type: 'section' },
-    { item: 'Serviços', path: '#services', icon: faCalendarTimes, type: 'section' },
-    { item: 'Testimonials', path: '#receber-feedback', icon: faThumbsUp, type: 'section' },
+    { item: 'Contato', path: '#ContactSection', icon: faPhone, type: 'section' },
+    // { item: 'Orçamento', path: '#quote', icon: faCalendarAlt, type: 'section' },
+    // { item: 'Tabela preço', path: '#price-table', icon: faMoneyCheckDollar, type: 'section' },
+    // { item: 'Serviços', path: '#services', icon: faCalendarTimes, type: 'section' },
+    { item: 'Testimonials', path: '#Testimonials', icon: faThumbsUp, type: 'section' },
     { item: 'Dicas', path: '#tips', icon: faShareAlt, type: 'section' },
     { item: 'Galeria', path: '/Gallery', icon: faGlobe, type: 'page' },
   ];
@@ -39,13 +39,13 @@ export default function Navbar() {
       path: '#AboutCompany',
       type: 'section'
     },
-    {
-      title: 'Contato',
-      icon: faPhone,
-      description: 'Get in touch with us',
-      path: '#ContactSection',
-      type: 'section'
-    },
+    // {
+    //   title: 'Contato',
+    //   icon: faPhone,
+    //   description: 'Get in touch with us',
+    //   path: '#ContactSection',
+    //   type: 'section'
+    // },
     {
       title: 'Testimonials',
       icon: faThumbsUp,
@@ -53,20 +53,20 @@ export default function Navbar() {
       path: '#Testimonials',
       type: 'section'
     },
-    {
-      title: 'Preço',
-      icon: faUsers,
-      description: 'Sessão exclusiva com os preços bases',
-      path: '#PriceTable',
-      type: 'section'
-    },
-    {
-      title: 'Serviços',
-      icon: faEnvelope,
-      description: 'serviços disponiveis',
-      path: '#Services',
-      type: 'section'
-    },
+    // {
+    //   title: 'Preço',
+    //   icon: faUsers,
+    //   description: 'Sessão exclusiva com os preços bases',
+    //   path: '#PriceTable',
+    //   type: 'section'
+    // },
+    // {
+    //   title: 'Serviços',
+    //   icon: faEnvelope,
+    //   description: 'serviços disponiveis',
+    //   path: '#Services',
+    //   type: 'section'
+    // },
     {
       title: 'Galeria Personalizada',
       icon: faGlobe,
@@ -212,11 +212,11 @@ export default function Navbar() {
             </button>
             
             <button 
-              onClick={() => handleNavigation('#FormQuote', 'section')} 
+              onClick={() => handleNavigation('#ContactSection', 'section')} 
               className={`px-3 py-2 text-sm hover:bg-[#9b4819] hover:text-white rounded-md flex items-center space-x-2 transition-colors ${activeHash === '#FormQuote' ? 'bg-[#9b4819] text-white' : 'text-gray-700'}`}
             >
               <FontAwesomeIcon icon={faCalendarAlt} className="w-4 h-4" />
-              <span>Orçamento</span>
+              <span>Contact</span>
             </button>
             
             {/* Dropdown Seções */}
